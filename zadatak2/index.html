@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadatak 2</title>
+</head>
+<body>
+    <h2>Brojač Samoglasnika</h2>
+    <button onclick="prebrojSamoglasnike()">Unesite Rečenicu</button>
+    <p id="rezultat"></p>
+    <p id="najcesci"></p>
+
+    <script>
+        function prebrojSamoglasnike(){
+            const recenica=prompt("Unesite Rečenicu: ");
+            const samoglasnici="aeiou";
+
+            let brojac=0;
+            let brA=0;
+            let brE=0;
+            let brI=0;
+            let brO=0;
+            let brU=0;
+            
+            for(let i=0;i<recenica.length;i++){
+                const samoglasnik=recenica[i].toLowerCase();
+
+                if(samoglasnik==='a'){
+                    brA++;
+                    brojac++;
+                }else if(samoglasnik==='e'){
+                    brE++;
+                    brojac++;
+                }else if(samoglasnik==='i'){
+                    brI++;
+                    brojac++;
+                }else if(samoglasnik==='o'){
+                    brO++;
+                    brojac++;
+                }else if(samoglasnik==='u'){
+                    brU++;
+                    brojac++;
+                }
+            }
+
+            let najcesci='';
+            let maxNum=0;
+
+            if(brA>maxNum){
+                maxNum=brA;
+                najcesci='a';
+            }
+            if(brE>maxNum){
+                maxNum=brE;
+                najcesci='e';
+            }
+            if(brI>maxNum){
+                maxNum=brI;
+                najcesci='i';
+            }
+            if(brO>maxNum){
+                maxNum=brO;
+                najcesci='o';
+            }
+            if(brU>maxNum){
+                maxNum=brU;
+                najcesci='u';
+            }
+            document.getElementById("rezultat").innerText="Ukupan broj samoglasnika je: " + brojac;
+            document.getElementById("najcesci").innerText="Najviše se ponavlja samoglasnik " + najcesci;
+        }
+    </script>
+</body>
+</html>
